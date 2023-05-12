@@ -25,7 +25,7 @@ export default async function List() {
       {result.map((a, i) => {
         console.log("========== \n", result[i].title);
         return (
-          <div className="list-item">
+          <div className="list-item" key={i}>
             <h4>{result[i].title}</h4>
             <p>1월 1일</p>
           </div>
