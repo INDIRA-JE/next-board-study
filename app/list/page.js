@@ -16,17 +16,13 @@ export default async function List() {
   data.age = 30;
   console.log(data.age); */
 
-  result.map((a, i) => {
-    // console.log("========================== \n", result[i].title); // 내용
-    // console.log(i); // 순번
-  });
-
   return (
     <div className="list-bg">
       {result.map((a, i) => {
         return (
           <div className="list-item" key={i}>
-            <h4>{result[i].title}</h4>
+            {/* <h4>{result[i].title}</h4> */}
+            <Link href={"/detail/" + result[i]._id}>{result[i].title}</Link>
             <p>1월 1일</p>
           </div>
         );
