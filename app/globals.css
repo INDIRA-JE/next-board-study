@@ -21,3 +21,38 @@ body {
   color: grey;
   margin: 5px 0px;
 }
+
+.p-20 {
+  padding: 20px;
+}
+input {
+  margin-bottom: 10px;
+  padding: 10px;
+  box-sizing: border-box;
+  display: block;
+}
+button {
+  margin-bottom: 10px;
+  padding: 10px 15px;
+  background: lightgray;
+  border: none;
+  border-radius: 5px;
+}
+
+// Write Page
+.p-20 {
+  padding: 20px;
+}
+input {
+  margin-bottom: 10px;
+  padding: 10px;
+  box-sizing: border-box;
+  display: block;
+}
+button {
+  margin-bottom: 10px;
+  padding: 10px 15px;
+  background: lightgray;
+  border: none;
+  border-radius: 5px;
+}
