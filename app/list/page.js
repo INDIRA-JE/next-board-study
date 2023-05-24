@@ -20,8 +20,8 @@ export default async function List() {
   return (
     <div className="list-bg">
       {result.map((a, i) => {
-        console.log(a.title);
-        console.log(i.title);
+        // console.log(a.title);
+        // console.log(i.title);
         return (
           <div className="list-item" key={i}>
             {/* <h4>{result[i].title}</h4> → 링크 적용*/}
