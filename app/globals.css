@@ -36,6 +36,12 @@ button {
   margin-bottom: 10px;
   padding: 10px 15px;
   background: lightgray;
-  /* border: none; */
+  border: none;
   border-radius: 5px;
+}
+
+// Edit page
+a {
+  text-decoration: none;
+  color: black;
 }
