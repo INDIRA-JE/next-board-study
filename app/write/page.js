@@ -1,4 +1,4 @@
-export default function Write() {
+export default function write() {
   return (
     <div className="p-20">
       <h3>글 작성</h3>
