@@ -3,7 +3,7 @@ import { connectDB } from "@/util/database";
 export default async function handler(request, response) {
   // 1. request 들어오는지 확인
   // console.log("◆ 요청 =========\n", request.method);
-  // console.log("◆ 요청 =========\n", request.body);
+  console.log("◆ 요청 =========\n", request.body);
 
   // 4. 반복문 작성
   if (request.method == "POST") {

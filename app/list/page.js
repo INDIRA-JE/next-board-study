@@ -19,6 +19,7 @@ export default async function List() {
 
   return (
     <div className="list-bg">
+      <h3>리스트 페이지</h3>
       {result.map((a, i) => {
         // console.log(a.title);
         // console.log(i.title);
