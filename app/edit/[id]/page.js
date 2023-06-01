@@ -6,13 +6,11 @@ export default async function edit(props) {
   let result = await db
     .collection("post")
     .findOne({ _id: new ObjectId(props.params.id) });
-  console.log(props); // { params: { id: '645bb2575888a7fef7d31f7d' }, searchParams: {} }
-  console.log(result);
-  console.log(result._id); // new ObjectId("645bb2575888a7fef7d31f7d")
-  console.log(result._id.toString()); // 645bb2575888a7fef7d31f7d
+  // console.log(">>>\n", result._id); // new ObjectId("645bb2575888a7fef7d31f7d")
+  // console.log(">>>\n", result._id.toString()); // 645bb2575888a7fef7d31f7d
 
   return (
-    <div className="p-20">
+    <div>
       <h3>수정 페이지</h3>
       <form action="/api/post/edit" method="POST">
         <input
