@@ -16,6 +16,7 @@ export default async function handler(request, response) {
       .collection("post")
       //   .updateOne({ 어떤document수정할건지 }, { $set: 바꿀내용(title,content) });
       .updateOne({ _id: new ObjectId(request.body._id) }, { $set: 바뀐내용 });
+
     response.status(200).redirect(302, "/list");
   }
 }
