@@ -3,7 +3,7 @@ import { ObjectId } from "mongodb";
 
 export default async function handler(request, response) {
   if (request.method == "POST") {
-    console.log(request.body._id);
+    // console.log(request.body._id);
     // [Object: null prototype] {
     //      _id: '645bb2575888a7fef7d31f7d',
     //      title: '안녕',
