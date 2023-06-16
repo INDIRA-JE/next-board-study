@@ -4,23 +4,22 @@ export default async function join(request, response) {
   // request 값 확인
   // console.log("### request.method\n", request.method);
   // console.log("### request.body\n", request.body);
-  console.log("### 1. request.body.id\n", request.body.id);
-  console.log("### 1. request.body.pw\n", request.body.pw);
+  // console.log("### 1. request.body.id\n", request.body.id);
+  // console.log("### 1. request.body.pw\n", request.body.pw);
 
   // 변수 설정
   const db = (await connectDB).db("forum");
   const findId = await db.collection("account").findOne();
   const id = request.body.id;
   const pw = request.body.pw;
-  console.log("### 2. Id\n", id);
-  console.log("### 2-1. pw\n", pw);
-  console.log("### 3. findId\n", findId);
+  // console.log("### 2. Id\n", id);
+  // console.log("### 2-1. pw\n", pw);
+  // console.log("### 3. findId\n", findId);
 
   // 구분
   if (id === findId.id) {
     return response.status(500).json("아이디 중복~!");
   } else if (id == "") {
-    console.log("ㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇ");
     return response.status(500).json("아이디 입력 하자~!");
   } else if (pw == "") {
     return response.status(500).json("비번 입력 하자~!");
