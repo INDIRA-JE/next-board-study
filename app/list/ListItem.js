@@ -3,7 +3,7 @@
 import Link from "next/link";
 
 export default function ListItem({ result }) {
-  console.log("\n>>> ListItem page : ", result);
+  // console.log("\n>>> ListItem page : ", result);
   console.log("\n>>> result._id : ", result._id);
   /* result 값
       [
@@ -15,41 +15,27 @@ export default function ListItem({ result }) {
 
   return (
     <div>
-      {result.map((a, i) => {
-        console.log("\ni.num : ", i);
-        console.log("a._id : ", a._id);
-        console.log("a.title : ", a.title);
-        console.log("a.content : ", a.content);
-
-        return (
-          <div className="list-item" key={i}>
-            {/* <h4>{result[i].title}</h4> → 링크 적용*/}
-            <Link href={"/detail/" + result[i]._id}>
-              <h4>{a.title}</h4>
-            </Link>
-            {/* <DetailLink /> */}
-            {/* <Link href={"/edit/" + result[i]._id}>🔄️</Link> */}
-            <Link href={"/edit/" + result[i]._id} className="list-btn">
-              ✏️
-            </Link>
-
-            <span
-              onClick={() => {
-                fetch("/api/post/delete", {
-                  method: "DELETE",
-                  body: result[i]._id,
-                }).then(() => {
-                  console.log("삭제완료");
-                });
-              }}
-            >
-              🗑️
-            </span>
-
-            <p>1월 1일</p>
-          </div>
-        );
-      })}
+      {result.map((a, i) => (
+        <div className="list-item" key={i}>
+          <Link href={"/detail/" + result[i]._id}>
+            <h4>{result[i].title}</h4>
+          </Link>
+          <Link href={"/edit/" + result[i]._id}>✏️</Link>
+          <span
+            onClick={() => {
+              fetch("/api/test", {
+                method: "POST",
+                body: JSON.stringify([1, 2, 3]),
+              }).then(() => {
+                console.log(123123);
+              });
+            }}
+          >
+            🗑️
+          </span>
+          <p>1월 1일</p>
+        </div>
+      ))}
     </div>
   );
 }

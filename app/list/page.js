@@ -1,19 +1,19 @@
 import { connectDB } from "@/util/database";
 import ListItem from "./ListItem";
+import Link from "next/link";
 
 export default async function List() {
   const db = (await connectDB).db("forum");
   let result = await db.collection("post").find().toArray();
-  console.log(">>> List page1\n", result);
-  result = result.map((a) => {
-    a._id = a._id.toString();
-    return a;
-  });
-  console.log(">>> List page2\n", result);
+  // console.log("■ List page1\n", result);
+  // result = result.map((a) => {
+  //   a._id = a._id.toString();
+  //   return a;
+  // });
+  // console.log(">>> List page2\n", result);
 
   return (
     <div className="list-bg">
-      <h3>리스트 페이지</h3>
       <ListItem result={result} />
     </div>
   );
