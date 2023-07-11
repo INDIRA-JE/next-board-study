@@ -6,10 +6,12 @@ export default async function List() {
   const db = (await connectDB).db("forum");
   let result = await db.collection("post").find().toArray();
   // console.log("■ List page1\n", result);
-  // result = result.map((a) => {
-  //   a._id = a._id.toString();
-  //   return a;
-  // });
+
+  // Warning 나는 부분 : _id값을 문자열(toString)로 변경
+  result = result.map((a) => {
+    a._id = a._id.toString();
+    return a;
+  });
   // console.log(">>> List page2\n", result);
 
   return (
@@ -18,9 +20,6 @@ export default async function List() {
     </div>
   );
 }
-
-//   console.log(result[0].title);
-//   console.log(Date);
 
 /* Object 자료형 Test
   let data = { name: "JE", age: "20" };

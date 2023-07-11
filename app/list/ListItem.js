@@ -3,8 +3,7 @@
 import Link from "next/link";
 
 export default function ListItem({ result }) {
-  // console.log("\n>>> ListItem page : ", result);
-  console.log("\n>>> result._id : ", result._id);
+  // console.log("\n>>> result : ", result);
   /* result 값
       [
         { _id: "645bb2575888a7fef7d31f7d", title: "안녕1", content: "반가워1" },
@@ -23,11 +22,11 @@ export default function ListItem({ result }) {
           <Link href={"/edit/" + result[i]._id}>✏️</Link>
           <span
             onClick={() => {
-              fetch("/api/test", {
+              fetch("/api/post/delete", {
+                // method: "DELETE",
                 method: "POST",
-                body: JSON.stringify([1, 2, 3]),
-              }).then(() => {
-                console.log(123123);
+                // body: JSON.stringify({ a: 1 }),
+                body: result[i]._id,
               });
             }}
           >
