@@ -28,20 +28,8 @@ export default function ListItem({ result }) {
                 // body: JSON.stringify({ a: 1 }),
                 body: result[i]._id,
               })
-                .then((r) => {
-                  if (r.status == 200) {
-                    return r.json();
-                  } else {
-                    // 서버가 에러코드 전송시 -> 실행할 코드
-                  }
-                })
-                .then((r) => {
-                  // 성공시 -> 실행할 코드
-                })
-                .catch((error) => {
-                  // 인터넷 문제로 실패시 -> 실행할 코드
-                  console.log(error);
-                });
+                .then((r) => r.json())
+                .then(() => {});
             }}
           >
             🗑️
