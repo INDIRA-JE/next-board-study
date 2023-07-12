@@ -21,15 +21,25 @@ export default function ListItem({ result }) {
           </Link>
           <Link href={"/edit/" + result[i]._id}>✏️</Link>
           <span
-            onClick={() => {
-              fetch("/api/post/delete", {
-                // method: "DELETE",
-                method: "POST",
-                // body: JSON.stringify({ a: 1 }),
-                body: result[i]._id,
-              })
-                .then((r) => r.json())
-                .then(() => {});
+            onClick={(e) => {
+              // fetch("/api/post/delete", {
+              //   // method: "DELETE",
+              //   method: "POST",
+              //   // body: JSON.stringify({ a: 1 }),
+              //   body: result[i]._id,
+              // })
+              //   .then((r) => r.json())
+              //   .then(() => {
+              //     // 숨기는 기능
+              //     e.target.parentElement.style.opacity = 0;
+              //     // 1초 후에 -> 박스 없애는 기능
+              //     setTimeout(() => {
+              //       e.target.parentElement.style.display = "none";
+              //     }, 1000);
+              //   });
+              // fetch("/api/test?name=JE&age=20");
+              // fetch("/api/abc/어쩌구");
+              fetch("/api/abc/JE");
             }}
           >
             🗑️
