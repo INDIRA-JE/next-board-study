@@ -16,8 +16,8 @@ export default async function List() {
 
   return (
     <div className="list-bg">
-      {/* <ListItem result={result} /> */}
-      <ListItem2 result={result} />
+      <ListItem result={result} />
+      {/* <ListItem2 result={result} /> */}
     </div>
   );
 }

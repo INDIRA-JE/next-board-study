@@ -27,16 +27,14 @@ export default function ListItem2({ result }) {
           <button
             onClick={() => {
               // POST 확인되면 -> 서버([delete_2].js)로 전달
-              fetch(
-                "/api/delete/[result[i]._id]" +
-                  { method: "POST", body: result[i]._id }
-              )
+              fetch("/api/delete/TEST", {
+                method: "POST",
+                body: result[i]._id,
+              })
                 // 서버에서 온 데이터(응답)을 출력
-                .then((result) => {
-                  return result.json();
-                })
-                .then((result) => {
-                  console.log(result);
+                .then((r) => r.json())
+                .then((r) => {
+                  console.log(r);
                 });
             }}
           >
