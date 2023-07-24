@@ -1,9 +1,10 @@
 import { connectDB } from "@/util/database";
 import ListItem from "./ListItem";
-import ListItem2 from "./ListItem2";
+
+export const revalidate = 20;
 
 // Rendering 부분(변수명은 그대로 사용)
-export const dynamic = "force-dynamic";
+// export const dynamic = "force-dynamic";
 // export const dynamic = "force-static";
 
 export default async function List() {
@@ -21,7 +22,6 @@ export default async function List() {
   return (
     <div className="list-bg">
       <ListItem result={result} />
-      {/* <ListItem2 result={result} /> */}
     </div>
   );
 }

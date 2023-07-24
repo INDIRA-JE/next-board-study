@@ -18,6 +18,7 @@ export default function RootLayout({ children }) {
             JE forum
           </Link>
           <Link href="/list">리스트</Link>
+          <Link href="/write">글쓰기</Link>
           <Link href="/join">회원가입</Link>
           <Link href="/login">로그인</Link>
         </div>
