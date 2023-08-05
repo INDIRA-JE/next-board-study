@@ -1,6 +1,7 @@
 import Link from "next/link";
 import "./globals.css";
 import { Inter } from "next/font/google";
+import LoginBtn from "./LoginBtn";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,6 +22,7 @@ export default function RootLayout({ children }) {
           <Link href="/write">글쓰기</Link>
           <Link href="/join">회원가입</Link>
           <Link href="/login">로그인</Link>
+          <LoginBtn />
         </div>
         {children}
       </body>
