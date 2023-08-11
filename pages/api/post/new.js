@@ -11,7 +11,7 @@ export default async function handler(request, response) {
   let session = await getServerSession(request, response, authOptions);
   console.log("\n### WriteSession\n", session);
   if (session) {
-    request.body.author = session.user.email;
+    request.body.author = session.user.email; // 항목추가(.author) 작업 : user 정보에 email 항목 추가
   }
   console.log("\n### request.body\n", request.body);
 
