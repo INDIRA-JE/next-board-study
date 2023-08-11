@@ -16,7 +16,7 @@ export const metadata = {
 export default async function RootLayout({ children }) {
   // 현재 로그인 된 유저이름, 이메일 등이 남음
   const session = await getServerSession(authOptions);
-  console.log("### session\n", session);
+  console.log("### layout 확인 : session\n", session); // { user: { name: 'INDIRA-JE', email: 'whddms87@gmail.com', image: 'https://avatars.githubusercontent.com/u/37805937?v=4' }}
 
   return (
     <html lang="en">

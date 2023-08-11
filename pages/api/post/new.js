@@ -4,16 +4,17 @@ import { authOptions } from "../auth/[...nextauth]";
 
 export default async function handler(request, response) {
   // 1. request 들어오는지 확인
-  // console.log("◆ 요청 =========\n", request.method);
-  // console.log("◆ 요청 =========\n", request.body);
+  console.log("\n### 확인 : request.method\n", request.method);
+  console.log("\n### 확인 : request.body\n", request.body);
 
   // 유저정보 DB에서 가져오기
   let session = await getServerSession(request, response, authOptions);
-  console.log("\n### WriteSession\n", session);
+  console.log("\n### Write Session\n", session);
   if (session) {
     request.body.author = session.user.email; // 항목추가(.author) 작업 : user 정보에 email 항목 추가
+    // request.body.email = session.user.email; // author = email
   }
-  console.log("\n### request.body\n", request.body);
+  // console.log("\n### request.body\n", request.body);
 
   // 4. 반복문 작성
   if (request.method == "POST") {
