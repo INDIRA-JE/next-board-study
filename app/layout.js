@@ -28,8 +28,7 @@ export default async function RootLayout({ children }) {
           <Link href="/list">리스트</Link>
           <Link href="/write">글쓰기</Link>
           <Link href="/join">회원가입</Link>
-          {/* <Link href="/login">로그인</Link> */}
-          {/* <LogInBtn /> */}
+          <Link href="/login">로그인</Link>
           {session ? (
             <span>
               {session.user.name} <LogOutBtn />
