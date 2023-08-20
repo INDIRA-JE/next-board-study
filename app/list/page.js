@@ -20,6 +20,7 @@ export default async function List() {
 
   return (
     <div className="list-bg">
+      <h3>게시물 리스트</h3>
       <ListItem result={result} />
       {/* <ListItem2 result={result} /> */}
     </div>
