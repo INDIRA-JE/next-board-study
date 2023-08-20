@@ -2,16 +2,15 @@ import { connectDB } from "@/util/database";
 import bcrypt from "bcrypt";
 
 export default async function handler(요청, 응답) {
-  // DB 관련 변수
+  // DB 관련 변수 선언
   let db = (await connectDB).db("forum");
   let findPost = await db.collection("user_cred").find().toArray();
 
   if (요청.method == "POST") {
-    // 이메일 중복 체크
+    // 이름, 이메일 중복 체크
     const emailArray = findPost.map((obj) => obj.email);
-    console.log("\n = console emailArray \n", emailArray);
-
-    console.log("\n = console body.email \n", 요청.body.email);
+    // console.log("\n = console emailArray \n", emailArray);
+    // console.log("\n = console body.email \n", 요청.body.email);
     if (요청.body.name === "" || 요청.body.email === "") {
       return 응답.status(500).json("빈칸에 입력해야 해");
     } else if (emailArray.includes(요청.body.email)) {
