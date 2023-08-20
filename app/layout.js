@@ -16,7 +16,7 @@ export const metadata = {
 export default async function RootLayout({ children }) {
   // 현재 로그인 된 유저이름, 이메일 등이 남음
   const session = await getServerSession(authOptions);
-  console.log("### layout 확인 : session\n", session); // { user: { name: 'INDIRA-JE', email: 'whddms87@gmail.com', image: 'https://avatars.githubusercontent.com/u/37805937?v=4' }}
+  // console.log("### layout 확인 : session\n", session); // { user: { name: 'INDIRA-JE', email: 'whddms87@gmail.com', image: 'https://avatars.githubusercontent.com/u/37805937?v=4' }}
 
   return (
     <html lang="en">
@@ -27,8 +27,8 @@ export default async function RootLayout({ children }) {
           </Link>
           <Link href="/list">리스트</Link>
           <Link href="/write">글쓰기</Link>
-          <Link href="/join">회원가입</Link>
-          {/* <Link href="/login">로그인</Link> */}
+          {/* <Link href="/join">회원가입</Link> */}
+          <Link href="/register">회원가입</Link>
           {session ? (
             <span>
               {session.user.name} <LogOutBtn />
