@@ -1,6 +1,7 @@
 import { connectDB } from "@/util/database";
 import ListItem from "./ListItem";
 import ListItem2 from "./ListItem2";
+import Link from "next/link";
 
 // Rendering 부분(변수명은 그대로 사용)
 export const dynamic = "force-dynamic";
@@ -21,6 +22,7 @@ export default async function List() {
   return (
     <div className="list-bg">
       <h3>게시물 리스트</h3>
+      <Link href="/write">글쓰기</Link>
       <ListItem result={result} />
       {/* <ListItem2 result={result} /> */}
     </div>
