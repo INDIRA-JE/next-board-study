@@ -36,7 +36,6 @@ export default function Comment(props) {
       <input
         onChange={(e) => {
           setComment(e.target.value);
-          console.log(e.target.value);
         }}
       />
       <button
