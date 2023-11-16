@@ -5,6 +5,9 @@ import LogInBtn from "./LoginBtn";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/pages/api/auth/[...nextauth]";
 import LogOutBtn from "./LogoutBtn";
+import DarkMode from "./DarkMode";
+import { cookies } from "next/dist/client/components/headers";
+// import { useState } from "react";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,9 +21,19 @@ export default async function RootLayout({ children }) {
   const session = await getServerSession(authOptions);
   // console.log("### layout 확인 : session\n", session); // { user: { name: 'INDIRA-JE', email: 'whddms87@gmail.com', image: 'https://avatars.githubusercontent.com/u/37805937?v=4' }}
 
+  let cookie = cookies().get("mode");
+
   return (
-    <html lang="en">
-      <body className={inter.className}>
+    // <html lang="en">
+    <html>
+      <body
+        className={
+          cookie != undefined && cookie.value == "dark"
+            ? "dark-mode"
+            : "light-mode"
+        }
+      >
+        {/* <body className={inter.className}> */}
         <div className="navbar">
           <Link href="/" className="logo">
             JE forum
@@ -36,6 +49,7 @@ export default async function RootLayout({ children }) {
           ) : (
             <LogInBtn />
           )}
+          <DarkMode />
         </div>
         {children}
       </body>
