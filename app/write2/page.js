@@ -20,7 +20,7 @@ export default async function Write2() {
       .insertOne({ title: formData.get("title") });
 
     console.log("유저 데이터 \n\t", formData.get("title"));
-    revalidatePath("/write2"); // 새로고침 기능 추가
+    revalidatePath("/write2"); // 새로고침 기능 추가(차이점만 바꿔줌)
   } // test : actions.js 페이지로 이동
 
   // 2. 폼 만듬
